@@ -1,3 +1,14 @@
+JIRA api documentation:
 https://docs.atlassian.com/jira/REST/latest/
+
+Sample code for using curl in php:
 https://answers.atlassian.com/questions/207169/create-issue-with-rest-api-and-curl-using-php
 
+Sample code for posting issue in json:
+https://developer.atlassian.com/jiradev/jira-apis/jira-rest-apis/jira-rest-api-tutorials/jira-rest-api-example-create-issue
+
+API tutorial:
+https://www.youtube.com/watch?v=RTjd1nwvlj4
+
+JSON format checker:
+https://jsonformatter.curiousconcept.com/
