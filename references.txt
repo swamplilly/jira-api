@@ -1,0 +1,3 @@
+https://docs.atlassian.com/jira/REST/latest/
+https://answers.atlassian.com/questions/207169/create-issue-with-rest-api-and-curl-using-php
+
