@@ -5,7 +5,7 @@ if (count($argv) != 2) {
 }
 
 // put together api url
-$jira_base_url = 'https://jira.library.ucla.edu';
+$jira_base_url = 'https://jira-test.library.ucla.edu';
 $issue_url = '/rest/api/2/issue';
 $post_url = $jira_base_url . $issue_url;
 

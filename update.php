@@ -5,7 +5,7 @@ if (count($argv) != 3) {
 }
 
 // put together api url
-$jira_base_url = 'https://jira.library.ucla.edu';
+$jira_base_url = 'https://jira-test.library.ucla.edu';
 $issue_url = '/rest/api/2/issue';
 $issue_num = "/" . $argv[1];
 $notify_status = "?notifyUsers=false";

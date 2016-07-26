@@ -1,0 +1,20 @@
+{
+    "fields": {
+       "project":
+       { 
+          "key": "DRUP"
+       },
+       "summary": "",
+       "description": "",
+       "issuetype": {
+          "id":"5",
+          "subtask": true
+       },
+       "assignee": {
+           "name": ""
+       },
+       "parent": {
+           "key":""
+       }
+   }
+}
