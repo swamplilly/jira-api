@@ -10,8 +10,8 @@ $issue_url = '/rest/api/2/issue';
 $post_url = $jira_base_url . $issue_url;
 
 // auth info
-$username = 'lli';
-$password = 'Tomato923!!1';
+$username = '*';
+$password = '*';
 
 // get post info into $post_obj
 $post = $argv[1];

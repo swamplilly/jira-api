@@ -1,25 +1,20 @@
 <?php
 
 if (count($argv) != 3) {
-    exit("ERROR: Please input issue ID or key, followed by update json file.\n");
+    exit("ERROR: Please input issue ID or key, followed by username to remove from watchlist.\n");
 }
 
 // put together api url
 $jira_base_url = 'https://jira.library.ucla.edu';
 $issue_url = '/rest/api/2/issue';
 $issue_num = "/" . $argv[1];
-$notify_status = "?notifyUsers=false";
-$post_url = $jira_base_url . $issue_url . $issue_num . $notify_status;
+$watchers_url = "/watchers?username=";
+$username = $argv[2];
+$post_url = $jira_base_url . $issue_url . $issue_num . $watchers_url . $username;
 
 // auth info
-$username = '*';
-$password = '*';
-
-// get post info into $post_obj
-$post = $argv[2];
-$post_fd = fopen($post, 'r');
-$post_content = file_get_contents($post);
-$post_obj = json_decode($post_content, true);
+$username = 'lli';
+$password = 'Tomato923!!1';
 
 // headers for curl
 $headers = array(
@@ -40,8 +35,7 @@ curl_setopt($curl, CURLOPT_VERBOSE, 1);
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
 curl_setopt($curl, CURLOPT_URL, $post_url);
-curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($post_obj));
+curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "DELETE");
 
 // execute curl, get response
 $response = curl_exec($curl);

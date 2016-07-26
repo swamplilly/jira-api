@@ -12,8 +12,8 @@ $notify_status = "?notifyUsers=false";
 $post_url = $jira_base_url . $issue_url . $issue_num . $notify_status;
 
 // auth info
-$username = '*';
-$password = '*';
+$username = 'lli';
+$password = 'Tomato923!!1';
 
 // get post info into $post_obj
 $post = $argv[2];

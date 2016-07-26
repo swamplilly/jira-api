@@ -1,0 +1,16 @@
+{
+    "fields": {
+       "project":
+       { 
+          "key": "DRUP"
+       },
+       "summary": "testing PHP script posting on jira 2",
+       "description": "This is a JIRA ticket created by a PHP script. It should also automatically have an assignee.",
+       "issuetype": {
+          "id": "1"
+       },
+       "assignee": {
+           "name": "lli"
+       }
+   }
+}

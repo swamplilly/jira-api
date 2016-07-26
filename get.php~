@@ -12,8 +12,8 @@ $issue_num = $argv[1];
 $post_url = $jira_base_url . $issue_url . $issue_num;
 
 // auth info
-$username = '*';
-$password = '*';
+$username = 'lli';
+$password = 'Tomato923!!1';
 
 // set curl options
 $curl = curl_init();

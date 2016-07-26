@@ -1,0 +1,20 @@
+{
+    "fields": {
+       "project":
+       { 
+          "key": "DRUP"
+       },
+       "summary": "testing PHP script posting on jira 5",
+       "description": "This is a JIRA ticket created by a PHP script, hopefully it is a subtask of DRUP-969",
+       "issuetype": {
+          "id":"5",
+          "subtask": true
+       },
+       "assignee": {
+           "name": "lli"
+       },
+       "parent": {
+           "key":"DRUP-969"
+       }
+   }
+}

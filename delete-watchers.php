@@ -13,8 +13,8 @@ $username = $argv[2];
 $post_url = $jira_base_url . $issue_url . $issue_num . $watchers_url . $username;
 
 // auth info
-$username = 'lli';
-$password = 'Tomato923!!1';
+$username = '*';
+$password = '*';
 
 // headers for curl
 $headers = array(
