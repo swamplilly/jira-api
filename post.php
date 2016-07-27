@@ -1,25 +1,41 @@
 <?php
 
-if (count($argv) != 2) {
-    exit("ERROR: Please include a json object file to post.\n");
-}
+/***************************************
+ *
+ * Set up url
+ *
+ **************************************/
 
-// put together api url
 $jira_base_url = 'https://jira-test.library.ucla.edu';
 $issue_url = '/rest/api/2/issue';
 $post_url = $jira_base_url . $issue_url;
 
-// auth info
-$username = '*';
-$password = '*';
+/***************************************
+ *
+ * Auth info
+ *
+ **************************************/
 
-// get post info into $post_obj
+$username = $argv[2];
+$password = $argv[3];
+
+/***************************************
+ *
+ * Get .json contents
+ *
+ **************************************/
+
 $post = $argv[1];
 $post_fd = fopen($post, 'r');
 $post_content = file_get_contents($post);
 $post_obj = json_decode($post_content, true);
 
-// headers for curl
+/***************************************
+ *
+ * Curl headers
+ *
+ **************************************/
+
 $headers = array(
 
     'Accept: application/json',
@@ -28,7 +44,12 @@ $headers = array(
 
 );
 
-// set curl options
+/***************************************
+ *
+ * Curl options
+ *
+ **************************************/
+
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
@@ -40,18 +61,33 @@ curl_setopt($curl, CURLOPT_USERPWD, "$username:$password");
 curl_setopt($curl, CURLOPT_URL, $post_url);
 curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($post_obj));
 
-// execute curl, get response
+/***************************************
+ *
+ * Execute
+ *
+ **************************************/
+
 $response = curl_exec($curl);
 $curl_error = curl_error($curl);
 
-// print response or errors
+/***************************************
+ *
+ * Print response
+ *
+ **************************************/
+
 if ($curl_error) {
-    echo "cURL Error: $curl_error";
+    echo "ERROR:\n$curl_error";
 } else {
-    echo $response;
+    echo "SUCCESS\nCheck below for post details:\n$response";
 }
 
-// finish
+/***************************************
+ *
+ * Clean up
+ *
+ **************************************/
+
 curl_close($curl);
 
 ?>

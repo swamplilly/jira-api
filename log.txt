@@ -1,0 +1,35 @@
+Feature: Information About Student Jobs at the Library
+  In order to find information about student jobs at the library
+  As an anonymous user
+  I need to verify that the link is valid through different paths
+
+  Background:                       # features/DRUPfeatures/drupaltesting/DRUP-924.feature:6
+    Given I go to "192.168.177.128" # FeatureContext::visit()
+
+  @homepage @footer @misc @employment
+  Scenario: #1A                                                                        # features/DRUPfeatures/drupaltesting/DRUP-924.feature:10
+    Given I follow "Employment"                                                        # FeatureContext::clickLink()
+    Then I should be on "/about/employment-human-resources"                            # FeatureContext::assertPageAddress()
+    Given I follow "Student Positions"                                                 # FeatureContext::clickLink()
+    Then I should be on "/about/employment-human-resources/ucla-library-jobs-students" # FeatureContext::assertPageAddress()
+
+  @homepage @navbar @misc @employment
+  Scenario: #1B                                                                        # features/DRUPfeatures/drupaltesting/DRUP-924.feature:17
+    Given I follow "Research & Teaching Support"                                       # FeatureContext::clickLink()
+    Then I should be on "/support"                                                     # FeatureContext::assertPageAddress()
+    Given I follow "Support for Students"                                              # FeatureContext::clickLink()
+    Then I should be on "/support/students"                                            # FeatureContext::assertPageAddress()
+    Given I follow "Apply for a Student Job at the Library"                            # FeatureContext::clickLink()
+    Then I should be on "/about/employment-human-resources/ucla-library-jobs-students" # FeatureContext::assertPageAddress()
+
+  @search @topic @css @misc @employment
+  Scenario: #1C                                                                        # features/DRUPfeatures/drupaltesting/DRUP-924.feature:26
+    Given I fill in "Site Search" with "student jobs"                                  # FeatureContext::fillField()
+    And I click the "#submit" element                                                  # FeatureContext::iClickTheElement()
+    Then I should be on "/site-search?search_query=student+jobs"                       # FeatureContext::assertPageAddress()
+    Given I follow "UCLA Library Jobs for Students"                                    # FeatureContext::clickLink()
+    Then I should be on "/about/employment-human-resources/ucla-library-jobs-students" # FeatureContext::assertPageAddress()
+
+3 scenarios (3 passed)
+18 steps (18 passed)
+0m0.26s (15.26Mb)
