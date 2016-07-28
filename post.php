@@ -89,5 +89,6 @@ if ($curl_error) {
  **************************************/
 
 curl_close($curl);
+var_dump($headers);
 
 ?>

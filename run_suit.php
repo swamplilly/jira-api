@@ -6,11 +6,11 @@
  *
  **************************************/
 echo 'JIRA username: ';
-$username = trim(fgets(STDIN));
+$username = escapeshellcmd(trim(fgets(STDIN)));
 
 echo 'JIRA password: ';
 system('stty -echo');
-$password = trim(fgets(STDIN));
+$password = escapeshellcmd(trim(fgets(STDIN)));
 system('stty echo');
 echo "\n";
 
@@ -100,4 +100,5 @@ exec($post_php);
 
 unlink($outfile);
 unlink($post_json);
+
 ?>
